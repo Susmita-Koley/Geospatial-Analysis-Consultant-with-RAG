@@ -1,0 +1,3 @@
+# This file ensures the data/ directory is tracked by git.
+# The actual data files (chroma_db/, eval_results.csv) are in .gitignore.
+# testset.json (if generated) is committed for reproducibility.

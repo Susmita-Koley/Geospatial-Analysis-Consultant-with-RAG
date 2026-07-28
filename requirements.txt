@@ -1,0 +1,48 @@
+# ─── Project 1: Geospatial Document Intelligence (RAG + RAGAS) ───────────────
+# Python 3.12 | Groq API (cloud) | No GPU required
+#
+# INSTALL (Windows):
+#   python -m venv venv
+#   .\venv\Scripts\pip.exe install -r requirements.txt
+#
+# NOTE: chromadb>=1.0.0 uses onnxruntime instead of chroma-hnswlib,
+#       so NO Microsoft C++ Build Tools are required on Windows.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Core LLM / RAG ───────────────────────────────────────────────────────────
+langchain>=1.3.0
+langchain-community>=0.4.0
+langchain-groq>=1.1.0
+langchain-huggingface>=1.2.0
+langchain-text-splitters>=1.1.0
+langchain-core>=1.5.0,<2.0.0
+
+# ── Vector Store ─────────────────────────────────────────────────────────────
+# chromadb 1.x uses onnxruntime (no MSVC needed on Windows).
+# langchain-chroma 1.1.0 is compatible with langchain-core>=1.1.3.
+chromadb>=1.5.0,<2.0.0
+langchain-chroma>=1.1.0
+# ragas 0.4.x imports ChatVertexAI from langchain_community at load time;
+# langchain-google-vertexai satisfies that import without Google Cloud credentials.
+langchain-google-vertexai>=3.0.0
+
+# ── Embeddings ───────────────────────────────────────────────────────────────
+sentence-transformers>=3.4.0
+# pulls: torch (CPU), transformers, huggingface-hub
+
+# ── PDF Parsing ───────────────────────────────────────────────────────────────
+pymupdf>=1.25.0          # fitz — fast, no poppler dependency
+
+# ── RAG Evaluation ────────────────────────────────────────────────────────────
+ragas==0.2.15
+
+# ── UI ────────────────────────────────────────────────────────────────────────
+streamlit>=1.45.0
+plotly>=6.1.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.1.0
+requests>=2.32.0
+pandas>=2.2.0
+numpy>=1.26.0
+tqdm>=4.67.0

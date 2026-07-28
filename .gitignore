@@ -1,0 +1,36 @@
+# Environment — never commit secrets
+.env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# PDFs — not committed (large files, public sources)
+# Run: python scripts/download_corpus.py  to fetch them
+docs/
+
+# ChromaDB — generated, large binary files
+data/chroma_db/
+
+# HuggingFace model cache (downloaded automatically on first run)
+.cache/
+
+# Streamlit cache
+.streamlit/
+
+# Evaluation results — regenerate with: python -m src.rag.evaluator
+data/eval_results.csv
+
+# Jupyter
+*.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PyInstaller
+*.spec
+dist/
+build/

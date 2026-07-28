@@ -1,0 +1,13 @@
+# Normalise line endings to LF in the repo
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.env.example text eol=lf
+
+# Binary files — no conversion
+*.pdf binary
+*.png binary
+*.jpg binary
